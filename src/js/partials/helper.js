@@ -146,6 +146,68 @@ $('.buttom').bind('mouseenter', function(){
      *   \Слайдер-Карусель Swiper\
      ********************************/
 
+/********************************
+*          WAYPOINTS
+********************************/
+
+//var waypoints = $('.waypoint')
+//    .css({'opacity':'0'})
+//    .waypoint(function(direction){
+//        if(direction === 'down'){
+//            $(this.element).animate({'opacity':'1'})
+//        }
+//        else{
+//            $(this.element).animate({'opacity':'0'})
+//        }
+//    },{
+//        offset: '30%'
+//    });
+
+$('.waypoint li')
+    .css({'opacity':'0'})
+    .waypoint(function(dr){
+        if(dr === 'down'){
+            $('.red').removeClass('animated bounceOutLeft');
+            $('.green').removeClass('animated  bounceOutRight');
+
+            $(this.element).animate({'opacity':'1'});
+
+            $('.red').addClass('animated bounceInLeft');
+            $('.green').addClass('animated  bounceInRight');
+
+        }
+        else{
+            $('.red').removeClass('animated bounceInLeft');
+            $('.green').removeClass('animated  bounceInRight');
+
+            $(this.element).animate({'opacity':'0'});
+
+            $('.red').addClass('animated bounceOutLeft');
+            $('.green').addClass('animated  bounceOutRight');
 
 
+        }
+    },{
+        offset:'70%'
+    });
+
+
+
+    $('.waypoinTwo li')
+        .css({'opacity':'0'})
+        .waypoint(function(dr){
+            if(dr === 'up'){
+                $(this.element).animate({'opacity':'1'});
+                $(this.element).addClass('animated bounceInUp')
+            }
+            else{
+                $(this.element).animate({'opacity':'0'});
+                $(this.element).removeClass('animated bounceInUp')
+            }
+        },{
+            offset:'10%'
+        });
+/********************************
+*          \WAYPOINTS\
+ ********************************/
 });
