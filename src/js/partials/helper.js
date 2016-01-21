@@ -185,11 +185,44 @@ $('.waypoint li')
             $('.red').addClass('animated bounceOutLeft');
             $('.green').addClass('animated  bounceOutRight');
 
+        }
+    },{
+        offset:'60%'
+    });
+
+
+$('.waypoint li')
+    .css({'opacity':'0'})
+    .waypoint(function(dr){
+        if(dr === 'down'){
+
+            $('.red').removeClass('animated bounceInLeft');
+            $('.green').removeClass('animated  bounceInRight');
+
+            $(this.element).animate({'opacity':'0'});
+
+            $('.red').addClass('animated bounceOutLeft');
+            $('.green').addClass('animated  bounceOutRight');
+
+        }
+        else{
+
+            $('.red').removeClass('animated bounceOutLeft');
+            $('.green').removeClass('animated  bounceOutRight');
+
+            $(this.element).animate({'opacity':'1'});
+
+            $('.red').addClass('animated bounceInLeft');
+            $('.green').addClass('animated  bounceInRight');
 
         }
     },{
-        offset:'70%'
+        offset:'10%'
     });
+
+
+
+
 
 
 
@@ -197,16 +230,38 @@ $('.waypoint li')
         .css({'opacity':'0'})
         .waypoint(function(dr){
             if(dr === 'up'){
+                $(this.element).removeClass('animated bounceOutUp');
                 $(this.element).animate({'opacity':'1'});
-                $(this.element).addClass('animated bounceInUp')
+                $(this.element).addClass('animated bounceInDown');
             }
             else{
-                $(this.element).animate({'opacity':'0'});
-                $(this.element).removeClass('animated bounceInUp')
+                $(this.element).removeClass('animated bounceInDown bounceInUp');
+                $(this.element).addClass('animated bounceOutUp');
+                $(this.element).animate({'opacity':'0'},2000);
+
             }
         },{
-            offset:'10%'
+            offset:'30%'
         });
+
+    $('.waypoinTwo li')
+        .css({'opacity':'0'})
+        .waypoint(function(dr){
+            if(dr === 'up'){
+                $(this.element).removeClass('animated bounceInDown bounceOutUp"');
+                $(this.element).animate({'opacity':'1'});
+                $(this.element).addClass('animated bounceOutDown');
+            }
+            else{
+                $(this.element).removeClass('animated bounceOutDown');
+                $(this.element).addClass('animated bounceInUp');
+                $(this.element).animate({'opacity':'1'});
+
+            }
+        },{
+            offset:'70%'
+        });
+
 /********************************
 *          \WAYPOINTS\
  ********************************/
