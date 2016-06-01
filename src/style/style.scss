@@ -5,12 +5,14 @@
 @import "../../bower_components/normalize.css/normalize.css";
 @import "../../bower_components/Swiper/dist/css/swiper.min.css";
 @import "../../bower_components/animate.css/animate.min.css";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
 
 @import "partials/sprite";
 
 @include sprites($spritesheet-sprites);
-//hover спрайта
 
+
+//hover спрайта
 
 //.icon {
 //  @include sprite($icon);
@@ -151,6 +153,39 @@ article{
 }
 
 
+// my-star
+
+.my-star {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+    text-align: left;
+    font-size: 30px;
+    .star {
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        &:before {
+            content: "\f006";
+            padding-right: 5px;
+            color: #777;
+        }
+        &:hover {
+            cursor: pointer;
+            &:before {
+                content: "\f005";
+                color: #e3cf7a;
+            }
+            ~ i {
+                &:before {
+                    content: "\f005";
+                    color: #e3cf7a;
+                }
+            }
+        }
+    }
+}
+
 
 
 
@@ -159,4 +194,4 @@ article{
 *     КАСТОМНЫЕ СТИЛИ
 **************************/
 
-@import "partials/media";
+// @import "partials/media";

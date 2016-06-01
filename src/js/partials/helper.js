@@ -20,7 +20,6 @@ $('.buttom').bind('mouseenter', function(){
         $(this).removeClass('animated rubberBand');
     });
 
-
 });
     $('.buttom').bind('click', function(){
         $('input[type="text"]').addClass('animated fadeOutRightBig').one(animationEnd, function(){

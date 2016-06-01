@@ -8,5 +8,3 @@
     Custom
  */
 //= partials/helper.js
-
-

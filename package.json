@@ -16,8 +16,9 @@
     "url": "https://github.com/Alecsandr86/frontend/issues"
   },
   "homepage": "https://github.com/Alecsandr86/frontend#readme",
-  "dependencies": {},
-
+  "dependencies": {
+    "gulp-rigger": "^0.5.8"
+  },
   "devDependencies": {
     "browser-sync": "^2.2.3",
     "gulp": "^3.8.11",
